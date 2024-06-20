@@ -1,11 +1,11 @@
 import sys
-import math
+import math#Kango911
 
 class Menu:
     @staticmethod
     def display_menu():
-        print("     Это консольное приложение является калькулятором для систем счисления от 1 до 50 включительно, а также служит калькулятором для перевода чисел в римскую СС.")
-        print("     Выполнил Lipenkov A.D. Группа: ПрИ-101")
+        print(f"\n\nВыполнил Lipenkov A.D. Группа: ПИ-101 <Kango911>")
+        print("Это консольное приложение является калькулятором для систем счисления от 1 до 50 включительно, а также служит калькулятором для перевода чисел в римскую СС.\n\n")
         print("Выберите что вы хотите сделать:")
         print("1. Перевести из одной системы счисления в другую.")
         print("2. Перевести число из Арабской в Римскую и наоборот.")
@@ -19,14 +19,14 @@ class Menu:
             Menu.return_to_menu()
         elif choice == '2':
             ArabicOrRomanian.choose_the_system()
-            Menu.return_to_menu()
+            Menu.return_to_menu()#Kango911
         elif choice == '3':
             SummaryInAnySystem.summary()
             Menu.return_to_menu()
         elif choice == '4':
             SubtractionInAnySystem.subtraction()
             Menu.return_to_menu()
-        elif choice == '5':
+        elif choice == '5':#Kango911
             MultiplicationInAnySystem.multiplication()
             Menu.return_to_menu()
 
@@ -37,7 +37,7 @@ class Menu:
         print("Иначе введите что угодно.")
         choice = input()
         if choice == '1':
-            print("", end='')
+            print("", end='')#Kango911
             Menu.display_menu()
         else:
             sys.exit()
@@ -46,7 +46,7 @@ class ConvertingToAnyBase:
     numbers = {10: 'A', 11: 'B', 12: 'C', 13: 'D', 14: 'E', 15: 'F', 16: 'G', 17: 'H', 18: 'I', 19: 'J', 21: 'K', 22: 'L',
                23: 'M', 24: 'N', 25: 'O', 26: 'P', 27: 'Q', 28: 'R', 29: 'S', 30: 'T', 31: 'U', 32: 'V', 33: 'W', 34: 'X',
                35: 'Y', 36: 'Z', 37: 'a', 38: 'b', 39: 'c', 40: 'd', 41: 'e', 42: 'f', 43: 'g', 44: 'h', 45: 'i', 46: 'j',
-               47: 'k', 48: 'l', 49: 'm', 50: 'n'}
+               47: 'k', 48: 'l', 49: 'm', 50: 'n'}#Kango911
 
     @staticmethod
     def convert_from_dec(num, base):
@@ -56,7 +56,7 @@ class ConvertingToAnyBase:
             if pos == 1:
                 result += str(pos)
                 break
-            elif pos == 0:
+            elif pos == 0:#Kango911
                 break
             remainder = pos % base
             if remainder > 9:
@@ -67,7 +67,7 @@ class ConvertingToAnyBase:
         return ConvertingToAnyBase.reverse(result)
 
     @staticmethod
-    def convert_to_dec(num, base):
+    def convert_to_dec(num, base):#Kango911
         result = 0
         s = 0
         for i in range(len(num) - 1, -1, -1):
@@ -82,7 +82,7 @@ class ConvertingToAnyBase:
         number = input()
         print("", end='')
         print("Введите систему счисления:")
-        system = int(input())
+        system = int(input())#Kango911
         if int(number) <= 0 or system <= 0:
             print("", end='')
             print("Введите число больше нуля!")
@@ -98,7 +98,7 @@ class ConvertingToAnyBase:
                     print("Вы ввели неправильное число. Число не должно содержать цифр больше или равных значению системы счисления.")
                     print("Для продолжения нажмите любую кнопку.")
                     input()
-                    ConvertingToAnyBase.transfer_to_another_system()
+                    ConvertingToAnyBase.transfer_to_another_system()#Kango911
                 verification //= 10
         print("", end='')
         tru_num = list(number)
@@ -111,13 +111,13 @@ class ConvertingToAnyBase:
         print("Для продолжения нажмите любую кнопку.")
         input()
         print("", end='')
-        print("Введите в какую систему счисления осуществить перевод:")
+        print("Введите в какую систему счисления осуществить перевод:")#Kango911
         sys2 = int(input())
         if sys2 <= 0:
             print("", end='')
             print("Введите число больше нуля!")
             print("Для продолжения нажмите любую кнопку.")
-            input()
+            input()#Kango911
             ConvertingToAnyBase.transfer_to_another_system()
         else:
             print("", end='')
@@ -128,7 +128,7 @@ class ConvertingToAnyBase:
     def reverse(line):
         return line[::-1]
 
-class ArabicOrRomanian:
+class ArabicOrRomanian:#Kango911
     @staticmethod
     def choose_the_system():
         print("", end='')
@@ -137,7 +137,7 @@ class ArabicOrRomanian:
         choice = int(input())
         if choice == 1:
             print(ArabicOrRomanian.arabic_to_roman(ArabicOrRomanian.arabic_input()))
-        elif choice == 2:
+        elif choice == 2:#Kango911
             print(ArabicOrRomanian.roman_to_arabic(ArabicOrRomanian.roman_input()))
         else:
             print("", end='')
@@ -148,7 +148,7 @@ class ArabicOrRomanian:
 
     @staticmethod
     def arabic_input():
-        print("Введите число, которое хотите перевести")
+        print("Введите число, которое хотите перевести")#Kango911
         arabic = int(input())
         print("", end='')
         return arabic
@@ -163,7 +163,7 @@ class ArabicOrRomanian:
         else:
             thousands = ["", "M", "MM", "MMM", "MMMM", "MMMMM"]
             hundreds = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"]
-            tens = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"]
+            tens = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"]#Kango911
             ones = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]
 
             result = ''
@@ -177,6 +177,7 @@ class ArabicOrRomanian:
 
             return result
 
+    # Kango911
     def roman_input():
         print("Введите римское значение числа:")
         roman = input()
@@ -190,7 +191,7 @@ class ArabicOrRomanian:
         total = 0
         last_value = 0
         for char in roman[::-1]:
-            value = roman_dict.get(char, 0)
+            value = roman_dict.get(char, 0)#Kango911
             if value >= last_value:
                 total += value
             else:
@@ -198,7 +199,7 @@ class ArabicOrRomanian:
             last_value = value
         return total
 
-class SummaryInAnySystem:
+class SummaryInAnySystem:#Kango911
     @staticmethod
     def summary():
         print("", end='')
@@ -211,7 +212,7 @@ class SummaryInAnySystem:
         print("Введите систему счисления:")
         system = int(input())
         print("", end='')
-        if system <= 0:
+        if system <= 0:#Kango911
             print("Введите систему счисления больше нуля!")
             print("Для продолжения нажмите любую кнопку.")
             input()
@@ -223,7 +224,7 @@ class SummaryInAnySystem:
             print(f"Их сумма в {system}-ой системе: {ConvertingToAnyBase.convert_from_dec(result, system)}")
 
 class SubtractionInAnySystem:
-    @staticmethod
+    @staticmethod#Kango911
     def subtraction():
         print("", end='')
         print("Введите первое число:")
@@ -239,10 +240,10 @@ class SubtractionInAnySystem:
             print("Введите систему счисления больше нуля!")
             print("Для продолжения нажмите любую кнопку.")
             input()
-            SubtractionInAnySystem.subtraction()
+            SubtractionInAnySystem.subtraction()#Kango911
         else:
             num1 = ConvertingToAnyBase.convert_to_dec(number1, system)
-            num2 = ConvertingToAnyBase.convert_to_dec(number2, system)
+            num2 = ConvertingToAnyBase.convert_to_dec(number2, system)#Kango911
             if num1 < num2:
                 print("Первое число должно быть больше второго!")
                 print("Для продолжения нажмите любую кнопку.")
@@ -258,7 +259,7 @@ class MultiplicationInAnySystem:
         print("", end='')
         print("Введите первое число:")
         number1 = input()
-        print("", end='')
+        print("", end='')#Kango911
         print("Введите второе число:")
         number2 = input()
         print("", end='')
@@ -267,7 +268,7 @@ class MultiplicationInAnySystem:
         print("", end='')
         if system <= 0:
             print("Введите систему счисления больше нуля!")
-            print("Для продолжения нажмите любую кнопку.")
+            print("Для продолжения нажмите любую кнопку.")#Kango911
             input()
             MultiplicationInAnySystem.multiplication()
         else:
@@ -277,4 +278,4 @@ class MultiplicationInAnySystem:
             print(f"Их произведение в {system}-ой системе: {ConvertingToAnyBase.convert_from_dec(result, system)}")
 
 if __name__ == "__main__":
-    Menu.display_menu()
+    Menu.display_menu()#Kango911
