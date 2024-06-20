@@ -1,39 +1,3 @@
-class Converter:
-    numbers = {
-        10: "A", 11: "B", 12: "C", 13: "D", 14: "E", 15: "F", 16: "G", 17: "H", 18: "I", 19: "J", 20: "K", 21: "L",
-        22: "M", 23: "N", 24: "O", 25: "P", 26: "Q", 27: "R", 28: "S", 29: "T", 30: "U", 31: "V", 32: "W", 33: "X",
-        34: "Y", 35: "Z", 36: "a", 37: "b", 38: "c", 39: "d", 40: "e", 41: "f", 42: "g", 43: "h", 44: "i", 45: "j",
-        46: "k", 47: "l", 48: "m", 49: "n"
-    }
-
-    @staticmethod
-    def convert_from_dec(num, sys):
-        result = ""
-        pos = num
-        while True:
-            if pos == 1:
-                result += str(pos)
-                break
-            elif pos == 0:
-                break
-            ost = pos % sys
-            if ost > 9:
-                result += Converter.numbers[ost]
-            else:
-                result += str(ost)
-            pos //= sys
-        return result[::-1]
-
-    @staticmethod
-    def convert_to_dec(num, sys):
-        result = 0
-        s = 0
-        for i in range(len(num) - 1, -1, -1):
-            result += int(num[i]) * (sys ** s)
-            s += 1
-        return result
-
-
 class ArabicOrRomanian:
     char_values = {
         'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000
@@ -92,9 +56,8 @@ class ArabicOrRomanian:
 class Menu:
     @staticmethod
     def display_menu():
-        print(
-            "     Это консольное приложение является калькулятором для систем счисления от 1 до 50 включительно, а также служит калькулятором для перевода чисел в римскую СС.")
-        print("     Выполнил Lipenkov A.D. Группа: ПИ-101")
+        print(f"Выполнил Lipenkov A.D. Группа: ПИ-101\n")
+        print(f"Это консольное приложение является калькулятором для систем счисления от 1 до 50 включительно, а также служит калькулятором для перевода чисел в римскую СС.\n\n")
         print("Выберите что вы хотите сделать:")
         print("1. Перевести из одной системы счисления в другую.")
         print("2. Перевести число из Арабской в Римскую и наоборот.")
@@ -200,6 +163,42 @@ class Menu:
         result_dec = num1_dec * num2_dec
         result_base = Converter.convert_from_dec(result_dec, system)
         print(f"Их произведение в {system}-ой системе: {result_base}")
+
+
+class Converter:
+    numbers = {
+        10: "A", 11: "B", 12: "C", 13: "D", 14: "E", 15: "F", 16: "G", 17: "H", 18: "I", 19: "J", 20: "K", 21: "L",
+        22: "M", 23: "N", 24: "O", 25: "P", 26: "Q", 27: "R", 28: "S", 29: "T", 30: "U", 31: "V", 32: "W", 33: "X",
+        34: "Y", 35: "Z", 36: "a", 37: "b", 38: "c", 39: "d", 40: "e", 41: "f", 42: "g", 43: "h", 44: "i", 45: "j",
+        46: "k", 47: "l", 48: "m", 49: "n"
+    }
+
+    @staticmethod
+    def convert_from_dec(num, sys):
+        result = ""
+        pos = num
+        while True:
+            if pos == 1:
+                result += str(pos)
+                break
+            elif pos == 0:
+                break
+            ost = pos % sys
+            if ost > 9:
+                result += Converter.numbers[ost]
+            else:
+                result += str(ost)
+            pos //= sys
+        return result[::-1]
+
+    @staticmethod
+    def convert_to_dec(num, sys):
+        result = 0
+        s = 0
+        for i in range(len(num) - 1, -1, -1):
+            result += int(num[i]) * (sys ** s)
+            s += 1
+        return result
 
 
 if __name__ == "__main__":
